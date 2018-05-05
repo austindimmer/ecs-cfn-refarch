@@ -117,7 +117,7 @@ Resources:
       Code:
         ZipFile: >
           
-          //A sample Lambda function that looks up the latest AMI ID for a given region and architecture.
+                 //A sample Lambda function that looks up the latest AMI ID for a given region and architecture.
 
           // Map instance architectures to an AMI name pattern
 
@@ -126,7 +126,7 @@ Resources:
               "HVM64": "amzn-ami-hvm*x86_64-gp2",
               "HVMG2": "amzn-ami-graphics-hvm*x86_64-ebs*",
               "ECS": "amzn-ami-*amazon-ecs-optimized",
-              "WindowsContainer": "Windows_Server-2*-English-Full-ECS_Optimized*"
+              "WindowsContainer": "Windows_Server-2016-English-Full-ECS_Optimized-*"
           };
 
           var aws = require("aws-sdk");
@@ -150,7 +150,7 @@ Resources:
                   //Owners: [event.ResourceProperties.Architecture == "HVMG2" ? "679593333241" : "amazon"]
                   //Owners: [ ["HVMG2", "WindowsContainer"].indexOf(event.ResourceProperties.Architecture) > -1  ? "679593333241" : "amazon"]
                     
-                    Owners: [event.ResourceProperties.Architecture == "HVMG2" ? "679593333241" :  event.ResourceProperties.Architecture == "WindowsContainer" ? "801119661308" : "amazon"]
+                    Owners: [event.ResourceProperties.Architecture == "HVMG2" ? "679593333241" :  event.ResourceProperties.Architecture == "WindowsContainer" ? "591542846629" : "amazon"]
               };
           
               // Get AMI IDs with the specified name pattern and owner
@@ -231,8 +231,9 @@ Resources:
               // write data to request body
               request.write(responseBody);
               request.end();
-          }      
-
+              
+          }
+          
       Handler: "index.handler"
       Runtime: nodejs4.3
       Timeout: 300
