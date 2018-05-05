@@ -126,7 +126,7 @@ Resources:
               "HVM64": "amzn-ami-hvm*x86_64-gp2",
               "HVMG2": "amzn-ami-graphics-hvm*x86_64-ebs*",
               "ECS": "amzn-ami-*amazon-ecs-optimized",
-              "WindowsContainer": "Windows_Server-2*-English-Full-Containers*"
+              "WindowsContainer": "Windows_Server-2*-English-Full-ECS_Optimized*"
           };
 
           var aws = require("aws-sdk");
