@@ -23,7 +23,6 @@ docker tag sfimage:latest 871989493406.dkr.ecr.eu-west-1.amazonaws.com/sfimage:l
 # 5) Run the following command to push this image to your newly created AWS repository:
 docker push 871989493406.dkr.ecr.eu-west-1.amazonaws.com/sfimage:latest
 
-
 docker ps -a
 
 docker start aspnetcontainer
